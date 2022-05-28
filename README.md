@@ -41,23 +41,27 @@ https://clientserver-elctronics-store.herokuapp.com/
 
 Log-in
 
-![App Screenshot](https://i.ibb.co/BjW9VzJ/login.png)
+![App Screenshot](https://i.ibb.co/HtnH2FZ/image.png)
 
 Register
 
-![App Screenshot](https://i.ibb.co/71rmX2f/register.png)
+![App Screenshot](https://i.ibb.co/ggMyjkt/image.png)
+
+Forgot Password
+
+![App Screenshot](https://i.ibb.co/pP2zsgq/image.png)
 
 Mail verification
 
-![App Screenshot](https://i.ibb.co/305QPqV/verficationemailsend.png)
+![App Screenshot](https://i.ibb.co/R0ZWRsM/image.png)
 
 Dashboard
 
-![App Screenshot](https://i.ibb.co/JChRkW0/dashboard.png)
+![App Screenshot](https://i.ibb.co/1zPqP6v/image.png)
 
 
 Profile Editing
 
-![App Screenshot](https://i.ibb.co/cJy8Wtq/profile-Editing.png)
+![App Screenshot](https://i.ibb.co/j4jMj7J/image.png)
 
 
