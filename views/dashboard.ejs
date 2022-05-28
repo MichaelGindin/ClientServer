@@ -9,13 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>My Webshop</title>
+    <title>Elctronics Shop</title>
 
     <!-- Custom fonts for this template -->
     <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/css/sb-admin-2.min.css" rel="stylesheet">
@@ -41,7 +39,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">My Webshop</div>
+                <div class="sidebar-brand-text mx-3">Elctronics Shop</div>
             </a>
 
             <!-- Divider -->
@@ -116,29 +114,22 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                                <img class="img-profile rounded-circle"
-                                    src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle" src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="/profile">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
                                 </a>
 
                                 <a class="dropdown-item" href="/about">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    About
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> About
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" id="clickLogout" href="#" data-toggle="modal"
-                                    data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                <a class="dropdown-item" id="clickLogout" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
                                 </a>
                             </div>
                         </li>
@@ -160,8 +151,7 @@
                     <div class="row">
                         <div class="col-sm">
                             <div class="card" style="width: 18rem; margin:auto">
-                                <img src="https://cdn.mos.cms.futurecdn.net/vHS5adVjp4trkC3Csf9oP7.jpg"
-                                    style="width:286px;height:190px;" class=" card-img-top" alt="...">
+                                <img src="https://cdn.mos.cms.futurecdn.net/vHS5adVjp4trkC3Csf9oP7.jpg" style="width:286px;height:190px;" class=" card-img-top" alt="...">
                                 <div class="card-body" style="margin:auto">
                                     <a href="/buyCellPhone" class="btn btn-primary">Buy CellPhone</a>
 
@@ -244,8 +234,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -273,7 +262,7 @@
     <!-- Custom scripts for all pages-->
     <script src="/static/js/sb-admin-2.min.js"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
             const _idSession = window.sessionStorage.getItem('_id');
             const _idLocal = window.localStorage.getItem('_id');
@@ -293,7 +282,7 @@
 
             const firstName = window.localStorage.getItem('firstName');
             $('#userName').text(firstName);
-            $("#clickLogout").click(function () {
+            $("#clickLogout").click(function() {
                 localStorage.removeItem('_id');
                 sessionStorage.removeItem('_id');
                 localStorage.removeItem('firstName');
@@ -306,8 +295,6 @@
 
 
         })
-
-
     </script>
 
 
