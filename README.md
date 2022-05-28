@@ -1,7 +1,7 @@
 
 # Electronics Store
 
-A client server project for mannaging Ecltronics strore
+A client server project for managing Electroincs store
 
 
 ## Features
@@ -19,7 +19,7 @@ A client server project for mannaging Ecltronics strore
 
 ## App
 
-https://electronics-store-clientserver.herokuapp.com/
+https://clientserver-elctronics-store.herokuapp.com/
 
 ## Authors
 - [@MichaelGindin](https://github.com/MichaelGindin)
