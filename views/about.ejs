@@ -275,13 +275,14 @@
             $('#userName').text(firstName);
 
             $("#clickLogout ").click(function() {
-                // localStorage.removeItem('_id');
-                // sessionStorage.removeItem('_id');
-                // localStorage.removeItem('firstName');
-                // localStorage.removeItem('email');
-                // localStorage.removeItem('rememberOn');
-                // url = '/users/login'
-                // window.location.href = url;
+                
+                localStorage.removeItem('_id');
+                sessionStorage.removeItem('_id');
+                localStorage.removeItem('firstName');
+                localStorage.removeItem('email');
+                localStorage.removeItem('rememberOn');
+                url = '/users/login'
+                window.location.href = url;
             })
 
 
