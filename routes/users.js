@@ -321,7 +321,7 @@ router.post('/resetPassword', function(req, res) {
                     };
                     const base64 = urlCrypt.cryptObj(data);
 
-                    const resetPasswordLink = 'http://localhost:3000/users/updatePassword/' + base64;
+                    const resetPasswordLink = 'https://clientserver-elctronics-store.herokuapp.com/users/updatePassword/' + base64;
                     let originalSource = fs.readFileSync(path.join(__dirname, '..', 'views', 'forgetPasswordEmail.html'), 'utf8');
 
                     function sendEmail1(source) {
@@ -478,7 +478,7 @@ router.post('/updateProfile', async function(req, res) {
             email: email
         };
         const base64 = urlCrypt.cryptObj(data);
-        const registrationiLink = 'http://localhost:3000/users/updateMail/' + base64;
+        const registrationiLink = 'https://clientserver-elctronics-store.herokuapp.com/localhost:3000/users/updateMail/' + base64;
 
         function sendEmail1(source) {
 
