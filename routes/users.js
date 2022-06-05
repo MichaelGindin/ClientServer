@@ -79,7 +79,7 @@ router.post('/register', async(req, res) => {
 
     const base64 = urlCrypt.cryptObj(data);
     let originalSource = fs.readFileSync(path.join(__dirname, '..', 'views', 'emailConfirmation.html'), 'utf8');
-    let registrationiLink = 'https://electronic-store-client-server.herokuapp.com/users/register/' + base64;
+    let registrationiLink = 'https://clientserver-elctronics-store.herokuapp.com/users/register/' + base64;
 
     const captcha = req.body['g-recaptcha-response'];
 
