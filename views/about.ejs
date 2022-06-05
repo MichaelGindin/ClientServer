@@ -276,8 +276,11 @@
 
             $("#clickLogout ").click(function() {
              
+                var logoutPopUp = document.getElementById("logoutModal ");
+                logoutPopUp.style.display = "block ";
                 // open logout modal dialog
-                $("#logoutModal ").modal('show');
+                
+                
                 // localStorage.removeItem('_id');
                 // sessionStorage.removeItem('_id');
                 // localStorage.removeItem('firstName');
