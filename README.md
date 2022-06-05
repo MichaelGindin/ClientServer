@@ -60,7 +60,7 @@ Dashboard
 ![App Screenshot](https://i.ibb.co/1zPqP6v/image.png)
 
 
-Profile Editing
+Profile Editing 
 
 ![App Screenshot](https://i.ibb.co/j4jMj7J/image.png)
 
