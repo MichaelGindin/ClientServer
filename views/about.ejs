@@ -236,7 +236,7 @@
                 <div class="modal-body ">Select "Logout " below if you are ready to end your current session.</div>
                 <div class="modal-footer ">
                     <button class="btn btn-secondary " type="button " data-dismiss="modal ">Cancel</button>
-                    <a class="btn btn-primary " href="/dashboard ">Logout</a>
+                    <a id="accpetLogout " class="btn btn-primary " href="/dashboard ">Logout</a>
                 </div>
             </div>
         </div>
@@ -275,6 +275,16 @@
             $('#userName').text(firstName);
 
             $("#clickLogout ").click(function() {
+                // localStorage.removeItem('_id');
+                // sessionStorage.removeItem('_id');
+                // localStorage.removeItem('firstName');
+                // localStorage.removeItem('email');
+                // localStorage.removeItem('rememberOn');
+                // url = '/users/login'
+                // window.location.href = url;
+            })
+
+            $("accpetLogout ").click(function() {
                 localStorage.removeItem('_id');
                 sessionStorage.removeItem('_id');
                 localStorage.removeItem('firstName');
@@ -283,7 +293,6 @@
                 url = '/users/login'
                 window.location.href = url;
             })
-
 
 
         })
