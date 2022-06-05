@@ -276,13 +276,15 @@
 
             $("#clickLogout ").click(function() {
              
-                localStorage.removeItem('_id');
-                sessionStorage.removeItem('_id');
-                localStorage.removeItem('firstName');
-                localStorage.removeItem('email');
-                localStorage.removeItem('rememberOn');
-                url = '/users/login'
-                window.location.href = url;
+                // open logout modal dialog
+                $("#logoutModal ").modal('show');
+                // localStorage.removeItem('_id');
+                // sessionStorage.removeItem('_id');
+                // localStorage.removeItem('firstName');
+                // localStorage.removeItem('email');
+                // localStorage.removeItem('rememberOn');
+                // url = '/users/login'
+                // window.location.href = url;
             })
 
             $("accpetLogout ").click(function() {
