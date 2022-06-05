@@ -224,7 +224,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
+    <div class="modal-dialog " id="logoutModal " tabindex="-1 " role="dialog " aria-labelledby="exampleModalLabel " aria-hidden="true ">
         <div class="modal-dialog " role="document ">
             <div class="modal-content ">
                 <div class="modal-header ">
@@ -275,13 +275,14 @@
             $('#userName').text(firstName);
 
             $("#clickLogout ").click(function() {
-                // localStorage.removeItem('_id');
-                // sessionStorage.removeItem('_id');
-                // localStorage.removeItem('firstName');
-                // localStorage.removeItem('email');
-                // localStorage.removeItem('rememberOn');
-                // url = '/users/login'
-                // window.location.href = url;
+             
+                localStorage.removeItem('_id');
+                sessionStorage.removeItem('_id');
+                localStorage.removeItem('firstName');
+                localStorage.removeItem('email');
+                localStorage.removeItem('rememberOn');
+                url = '/users/login'
+                window.location.href = url;
             })
 
             $("accpetLogout ").click(function() {
