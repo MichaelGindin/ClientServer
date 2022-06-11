@@ -28,7 +28,10 @@ const nodemailer = require("nodemailer");
 
 // Create a transport object for sending email
 const transporter = nodemailer.createTransport({
-    service: "Outlook",
+    host: "smtp-mail.outlook.com",
+    secureConnection: false,
+    port: 587,
+    service: "outlook",
     auth: {
         user: process.env.AUTH_EMAIL,
         pass: process.env.AUTH_PASS,
