@@ -1,16 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const PromoCodeSchema = new mongoose.Schema({
     promo_code: {
         type: String,
-        required: true
+        required: true,
     },
     description: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
 });
 
-const PromoCode = mongoose.model('PromoCode', PromoCodeSchema);
+const PromoCode = mongoose.model("PromoCode", PromoCodeSchema);
 
 module.exports = PromoCode;

@@ -1,42 +1,40 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-
-
-// Welcome page
-router.get('/', (req, res) => {
-    res.render('login')
-
+// Login page
+router.get("/", (req, res) => {
+    res.render("login");
 });
 
-router.get('/buyPc', (req, res) => {
-    res.render('buyPc')
-
+// Buy Pc page
+router.get("/buyPc", (req, res) => {
+    res.render("buyPc");
 });
 
-router.get('/buyCellPhone', (req, res) => {
-    res.render('buyCellPhone')
+// Buy Cell phone page
+router.get("/buyCellPhone", (req, res) => {
+    res.render("buyCellPhone");
 });
 
 // Dashbord page
-router.get('/dashboard', (req, res) => {
-    res.render('dashboard')
+router.get("/dashboard", (req, res) => {
+    res.render("dashboard");
 });
 
-
-router.get('/about', (req, res) => {
-    res.render('about')
-
+// About page
+router.get("/about", (req, res) => {
+    res.render("about");
 });
 
-router.get('/profile', (req, res) => {
-    res.render('profile')
+// Profile page (user profile)
+router.get("/profile", (req, res) => {
+    res.render("profile");
 });
-
 
 // Page Not Found
-router.get('/PageNotFound', (req, res) => {
-    res.render('404');
+router.get("/PageNotFound", (req, res) => {
+    res.render("404");
 });
 
+// Export the router
 module.exports = router;
