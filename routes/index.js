@@ -23,13 +23,12 @@ router.get('/dashboard', (req, res) => {
     res.render('dashboard')
 });
 
-// New Treatment page
+
 router.get('/about', (req, res) => {
     res.render('about')
 
 });
 
-// New Treatment page
 router.get('/profile', (req, res) => {
     res.render('profile')
 });
