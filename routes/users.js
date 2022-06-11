@@ -28,8 +28,7 @@ const nodemailer = require("nodemailer");
 
 // Create a transport object for sending email
 const transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com",
-    service: "Outlook",
+    service: "Gmail",
     auth: {
         user: process.env.AUTH_EMAIL,
         pass: process.env.AUTH_PASS,
@@ -188,7 +187,7 @@ router.post("/register", async(req, res) => {
                 else {
                     function sendEmail(source) {
                         const mailOptions = {
-                            from: "clientserver23123@outlook.com",
+                            from: "clientservermail123123@gmail.com",
                             to: email,
                             subject: "Email verification",
                             text: "Paste the url below into your browser to Emailify!" +
@@ -513,7 +512,7 @@ router.post("/updateProfile", async function(req, res) {
 
         function sendEmail1(source) {
             const mailOptions = {
-                from: "clientservermail123123@gmail.com",
+                from: "clientserver23123@yahoo.com",
                 to: email,
                 subject: "Confirm Changing email",
                 text: "Paste the url below into your browser to getPassword!",
