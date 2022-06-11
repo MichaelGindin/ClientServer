@@ -28,7 +28,7 @@ const nodemailer = require("nodemailer");
 
 // Create a transport object for sending email
 const transporter = nodemailer.createTransport({
-    service: "Gmail",
+    service: "Outlook",
     auth: {
         user: process.env.AUTH_EMAIL,
         pass: process.env.AUTH_PASS,
@@ -187,7 +187,7 @@ router.post("/register", async(req, res) => {
                 else {
                     function sendEmail(source) {
                         const mailOptions = {
-                            from: "clientservermail123123@gmail.com",
+                            from: "clientserver23123@outlook.com",
                             to: email,
                             subject: "Email verification",
                             text: "Paste the url below into your browser to Emailify!" +
@@ -507,7 +507,7 @@ router.post("/updateProfile", async function(req, res) {
         };
         const base64 = urlCrypt.cryptObj(data);
         const registrationiLink =
-            "https://clientserver-elctronics-store.herokuapp.com/localhost:3000/users/updateMail/" +
+            "https://clientserver-elctronics-store.herokuapp.com/users/updateMail/" +
             base64;
 
         function sendEmail1(source) {
