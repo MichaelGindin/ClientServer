@@ -28,7 +28,7 @@ const nodemailer = require("nodemailer");
 
 // Create a transport object for sending email
 const transporter = nodemailer.createTransport({
-    service: "Outlook365",
+    service: "walla",
     auth: {
         user: process.env.AUTH_EMAIL,
         pass: process.env.AUTH_PASS,
