@@ -28,7 +28,7 @@ const nodemailer = require("nodemailer");
 
 // Create a transport object for sending email
 const transporter = nodemailer.createTransport({
-    service: "yahoo",
+    service: "Outlook365",
     auth: {
         user: process.env.AUTH_EMAIL,
         pass: process.env.AUTH_PASS,
@@ -187,7 +187,7 @@ router.post("/register", async(req, res) => {
                 else {
                     function sendEmail(source) {
                         const mailOptions = {
-                            from: "clientserver23123@yahoo.com",
+                            from: "clientserver23123@outlook.com",
                             to: email,
                             subject: "Email verification",
                             text: "Paste the url below into your browser to Emailify!" +
@@ -341,7 +341,7 @@ router.post("/resetPassword", function(req, res) {
 
                 function sendEmail1(source) {
                     const mailOptions = {
-                        from: "clientserver23123@yahoo.com",
+                        from: "clientserver23123@outlook.com",
                         to: email,
                         subject: "Reset password",
                         text: "Paste the url below into your browser to getPassword!",
@@ -421,7 +421,7 @@ router.post("/updatePassword/:base64", async function(req, res) {
 
             function sendEmail1(source) {
                 const mailOptions = {
-                    from: "clientserver23123@yahoo.com",
+                    from: "clientserver23123@outlook.com",
                     to: EmailObj.email,
                     subject: "Password Changed Succsufly",
                     text: "Updated password!",
@@ -512,7 +512,7 @@ router.post("/updateProfile", async function(req, res) {
 
         function sendEmail1(source) {
             const mailOptions = {
-                from: "clientserver23123@yahoo.com",
+                from: "clientserver23123@outlook.com",
                 to: email,
                 subject: "Confirm Changing email",
                 text: "Paste the url below into your browser to getPassword!",
