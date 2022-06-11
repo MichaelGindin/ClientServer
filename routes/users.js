@@ -28,7 +28,7 @@ const nodemailer = require("nodemailer");
 
 // Create a transport object for sending email
 const transporter = nodemailer.createTransport({
-    service: "yahoo",
+    service: "Gmail",
     auth: {
         user: process.env.AUTH_EMAIL,
         pass: process.env.AUTH_PASS,
@@ -512,7 +512,7 @@ router.post("/updateProfile", async function(req, res) {
 
         function sendEmail1(source) {
             const mailOptions = {
-                from: "clientserver23123@yahoo.com",
+                from: "clientservermail123123@gmail.com",
                 to: email,
                 subject: "Confirm Changing email",
                 text: "Paste the url below into your browser to getPassword!",
