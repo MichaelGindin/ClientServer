@@ -417,7 +417,7 @@ router.post("/updatePassword/:base64", async function(req, res) {
         const EncryptedPassword = encryption.encrypt(newPass);
         try {
             const EmailObj = urlCrypt.decryptObj(base64);
-            await User.updateOne({ email: EmailObj.email }, { password: EncryptedPassword });
+            await User.updateOne({ email: EmailObj.email }, { password: EncryptedPassword }, { upsert: true });
 
             function sendEmail1(source) {
                 const mailOptions = {
@@ -602,7 +602,7 @@ router.post("/changePassword", async function(req, res) {
         // New Paswword
         const EncryptedPassword = encryption.encrypt(newPassword);
         try {
-            await User.updateOne({ email: user.email }, { password: EncryptedPassword });
+            await User.updateOne({ email: user.email }, { password: EncryptedPassword }, { upsert: true });
             res.status(200).json({
                 status: "success",
                 data: "The password was changed!",
