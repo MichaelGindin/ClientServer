@@ -561,6 +561,7 @@ router.get("/updateMail/:base64", async function(req, res) {
     }
 });
 
+// Request for changing user password with validation tests 
 router.post("/changePassword", async function(req, res) {
     const { oldPassword, newPassword, confirmPassword, id } = req.body;
 
