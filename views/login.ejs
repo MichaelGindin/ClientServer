@@ -61,7 +61,8 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <div class="g-recaptcha" data-sitekey="6LfmtiYgAAAAAKwMHJ4mom1G_Z6qwhMdTvAho0xh">
+                                            <div class="g-recaptcha" data-sitekey="6LfmtiYgAAAAAKwMHJ4mom1G_Z6qwhMdTvAho0xh
+                                                ">
 
                                             </div>
                                         </div>
@@ -103,8 +104,21 @@
 
         <script>
             $(document).ready(function() {
+
+
                 const _id = window.localStorage.getItem('_id');
                 const rememberOn = window.localStorage.getItem('rememberOn');
+                const firstName = window.localStorage.getItem('firstName');
+                const _idSession = window.sessionStorage.getItem('_id');
+
+                if (_id == undefined && _idSession == undefined) {
+                    localStorage.removeItem('_id');
+                    sessionStorage.removeItem('_id');
+                    localStorage.removeItem('firstName');
+                    localStorage.removeItem('email');
+                    localStorage.removeItem('rememberOn');
+                }
+
                 if (_id != undefined && rememberOn == 'true') {
                     url = '/dashboard'
                     window.location.href = url;
@@ -137,6 +151,7 @@
                             window.location.href = url;
                         },
                         error: function(error) {
+                            grecaptcha.reset();
                             const message = (JSON.parse(error.responseText)).message;
                             message.forEach(error => {
                                 const errorDiv = document.createElement('div');

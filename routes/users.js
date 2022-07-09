@@ -71,9 +71,9 @@ router.get("/passChangedSucc", (req, res) => {
 });
 
 // Register Handle
-router.post("/register", async(req, res) => {
+router.post("/register", async (req, res) => {
     const { firstName, lastName, email, password, password2, promoCode } =
-    req.body;
+        req.body;
     // Reciving data from the form
     const data = {
         firstName: req.body.firstName,
@@ -143,7 +143,7 @@ router.post("/register", async(req, res) => {
         const verifyURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}&remoteip=${req.connection.remoteAddress}`;
 
         // Make Request to VerifyURL
-        request(verifyURL, async(err, response, body) => {
+        request(verifyURL, async (err, response, body) => {
             body = JSON.parse(body);
             // If not success
             if (body.success !== undefined && !body.success) {
@@ -210,7 +210,7 @@ router.post("/register", async(req, res) => {
                             });
                     }
 
-                    styliner.processHTML(originalSource).then(function(processedSource) {
+                    styliner.processHTML(originalSource).then(function (processedSource) {
                         const template = handlebars.compile(processedSource);
                         const data = {
                             username: firstName,
@@ -227,7 +227,7 @@ router.post("/register", async(req, res) => {
 });
 
 // Register Handle
-router.get("/register/:base64", async function(req, res) {
+router.get("/register/:base64", async function (req, res) {
     try {
         const UserObj = urlCrypt.decryptObj(req.params.base64);
         const EncryptedPassword = encryption.encrypt(UserObj.password);
@@ -240,7 +240,7 @@ router.get("/register/:base64", async function(req, res) {
 });
 
 // Login Handle
-router.post("/login", async(req, res, next) => {
+router.post("/login", async (req, res, next) => {
     const captcha = req.body["g-recaptcha-response"];
     const { email, password, rememberOn } = req.body;
 
@@ -261,14 +261,14 @@ router.post("/login", async(req, res, next) => {
         });
     } else {
         // Secret Key
-        // const secretKey = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
+        //const secretKey = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
         const secretKey = "6LfmtiYgAAAAAEc_98Qfm9CaPiNHLzocuKxG8FZ_";
 
         // Verify URL
         const verifyURL = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}&remoteip=${req.socket.remoteAddress}`;
 
         // Make Request to VerifyURL
-        request(verifyURL, async(err, response, body) => {
+        request(verifyURL, async (err, response, body) => {
             body = JSON.parse(body);
             // If not success
             if (body.success !== undefined && !body.success) {
@@ -297,12 +297,12 @@ router.post("/login", async(req, res, next) => {
 });
 
 // Reset Password Handle get
-router.get("/resetPassword", function(req, res) {
+router.get("/resetPassword", function (req, res) {
     res.render("resetPassword");
 });
 
 // Reset Password Handle post (send email)
-router.post("/resetPassword", function(req, res) {
+router.post("/resetPassword", function (req, res) {
     const { email } = req.body;
     let errors = [];
 
@@ -348,7 +348,7 @@ router.post("/resetPassword", function(req, res) {
                         html: source,
                     };
 
-                    transporter.sendMail(mailOptions, function(error, info) {
+                    transporter.sendMail(mailOptions, function (error, info) {
                         if (error) {
                             res.json({
                                 status: "FAILED",
@@ -359,7 +359,7 @@ router.post("/resetPassword", function(req, res) {
                         }
                     });
                 }
-                styliner.processHTML(originalSource).then(function(processedSource) {
+                styliner.processHTML(originalSource).then(function (processedSource) {
                     const template = handlebars.compile(processedSource);
                     const data = { link: resetPasswordLink };
                     const result = template(data);
@@ -372,14 +372,14 @@ router.post("/resetPassword", function(req, res) {
 });
 
 // Update Password Handle get
-router.get("/updatePassword/:base64", function(req, res) {
+router.get("/updatePassword/:base64", function (req, res) {
     res.render("updatePassword", {
         base64: req.params.base64,
     });
 });
 
 // Update Password Handle post (update password)
-router.post("/updatePassword/:base64", async function(req, res) {
+router.post("/updatePassword/:base64", async function (req, res) {
     const { password, password2 } = req.body;
     const base64 = req.params.base64;
     let originalSource = fs.readFileSync(
@@ -428,7 +428,7 @@ router.post("/updatePassword/:base64", async function(req, res) {
                     html: source,
                 };
 
-                transporter.sendMail(mailOptions, function(error, info) {
+                transporter.sendMail(mailOptions, function (error, info) {
                     if (error) {
                         res.json({
                             status: "FAILED",
@@ -440,7 +440,7 @@ router.post("/updatePassword/:base64", async function(req, res) {
                 });
             }
             // Send Email to user with new password 
-            styliner.processHTML(originalSource).then(function(processedSource) {
+            styliner.processHTML(originalSource).then(function (processedSource) {
                 const template = handlebars.compile(processedSource);
                 const data = { info: "We have really important information for you" };
                 const result = template(data);
@@ -453,105 +453,113 @@ router.post("/updatePassword/:base64", async function(req, res) {
 });
 
 // Request for getting user profile with all data from database
-router.post("/getProfile", async function(req, res) {
-    const { id } = req.body;
-    let user = await User.findById({ _id: id });
-    let EncryptedPassword = encryption.decrypt(user.password);
-    user.password = EncryptedPassword;
-    res.send(user);
-});
-
-// Send request to update user profile
-router.post("/updateProfile", async function(req, res) {
-    let originalSource = fs.readFileSync(
-        path.join(__dirname, "..", "views", "emailWantToChange.html"),
-        "utf8"
-    );
-    const {
-        firstName,
-        lastName,
-        email,
-        phone,
-        country,
-        city,
-        street,
-        zipCode,
-        prevEmail,
-        id,
-    } = req.body;
-    const filter = { _id: id };
-    const update = {
-        firstName: firstName,
-        lastName: lastName,
-        phone: phone,
-        country: country,
-        city: city,
-        street: street,
-        zipCode: zipCode,
-    };
-
-    // find and update the user with the new information
-    await User.findOneAndUpdate(filter, update);
-
-
-    if (email != prevEmail) {
-        const userExistCheck = await User.findOne({ email: email });
-        if (userExistCheck) {
-            res.send(
-                "This email already in use , we can't change it. your other data has been saved."
-            );
-        }
-        const data = {
-            id: id,
-            email: email,
-        };
-        const base64 = urlCrypt.cryptObj(data);
-        const registrationiLink =
-            "https://clientserver-elctronics-store.herokuapp.com/users/updateMail/" +
-            base64;
-
-        function sendEmail1(source) {
-            const mailOptions = {
-                from: "clientservermail123123@gmail.com",
-                to: email,
-                subject: "Confirm Changing email",
-                text: "Paste the url below into your browser to getPassword!",
-                html: source,
-            };
-
-            transporter.sendMail(mailOptions, function(error, info) {
-                if (error) {
-                    res.json({
-                        status: "FAILED",
-                        message: "ERROR",
-                    });
-                } else {
-                    res.send(
-                        "The profile has been updated! and email sent to you to change your mail!"
-                    );
-                }
-            });
-        }
-
-        styliner.processHTML(originalSource).then(function(processedSource) {
-            const template = handlebars.compile(processedSource);
-            const data = {
-                firstName: firstName,
-                lastName: lastName,
-                link: registrationiLink,
-            };
-            const result = template(data);
-            sendEmail1(result);
-        });
-        res.send(
-            "The profile has been updated! and email sent to you to change your mail!"
-        );
-    } else {
-        res.send("The details has changed successfuly!");
+router.post("/getProfile", async function (req, res) {
+    try {
+        const { id } = req.body;
+        let user = await User.findById({ _id: id });
+        let EncryptedPassword = encryption.decrypt(user.password);
+        user.password = EncryptedPassword;
+        res.send(user);
+    } catch (e) {
+        return res.status(404).send("Bad");
     }
 });
 
-router.get("/updateMail/:base64", async function(req, res) {
+// Send request to update user profile
+router.post("/updateProfile", async function (req, res) {
+    try {
+        let originalSource = fs.readFileSync(
+            path.join(__dirname, "..", "views", "emailWantToChange.html"),
+            "utf8"
+        );
+        const {
+            firstName,
+            lastName,
+            email,
+            phone,
+            country,
+            city,
+            street,
+            zipCode,
+            prevEmail,
+            id,
+        } = req.body;
+        const filter = { _id: id };
+        const update = {
+            firstName: firstName,
+            lastName: lastName,
+            phone: phone,
+            country: country,
+            city: city,
+            street: street,
+            zipCode: zipCode,
+        };
+
+        // find and update the user with the new information
+        await User.findOneAndUpdate(filter, update);
+
+
+        if (email != prevEmail) {
+            const userExistCheck = await User.findOne({ email: email });
+            if (userExistCheck) {
+                res.send(
+                    "This email already in use , we can't change it. your other data has been saved."
+                );
+            }
+            const data = {
+                id: id,
+                email: email,
+            };
+            const base64 = urlCrypt.cryptObj(data);
+            const registrationiLink =
+                "https://clientserver-elctronics-store.herokuapp.com/users/updateMail/" +
+                base64;
+
+            function sendEmail1(source) {
+                const mailOptions = {
+                    from: "clientservermail123123@gmail.com",
+                    to: email,
+                    subject: "Confirm Changing email",
+                    text: "Paste the url below into your browser to getPassword!",
+                    html: source,
+                };
+
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        res.json({
+                            status: "FAILED",
+                            message: "ERROR",
+                        });
+                    } else {
+                        res.send(
+                            "The profile has been updated! and email sent to you to change your mail!"
+                        );
+                    }
+                });
+            }
+
+            styliner.processHTML(originalSource).then(function (processedSource) {
+                const template = handlebars.compile(processedSource);
+                const data = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    link: registrationiLink,
+                };
+                const result = template(data);
+                sendEmail1(result);
+            });
+            res.send(
+                "The profile has been updated! and email sent to you to change your mail!"
+            );
+        } else {
+            res.send("The details has changed successfuly!");
+        }
+    } catch (e) {
+        return res.status(404).send("Bad");
+    }
+});
+
+router.get("/updateMail/:base64", async function (req, res) {
     try {
         const UserObj = urlCrypt.decryptObj(req.params.base64);
         await User.findOneAndUpdate({ _id: UserObj.id }, { email: UserObj.email });
@@ -562,54 +570,58 @@ router.get("/updateMail/:base64", async function(req, res) {
 });
 
 // Request for changing user password with validation tests 
-router.post("/changePassword", async function(req, res) {
-    const { oldPassword, newPassword, confirmPassword, id } = req.body;
+router.post("/changePassword", async function (req, res) {
+    try {
+        const { oldPassword, newPassword, confirmPassword, id } = req.body;
 
-    let user = await User.findById({ _id: id });
-    let currentUserPassword = encryption.decrypt(user.password);
-    let errors = [];
+        let user = await User.findById({ _id: id });
+        let currentUserPassword = encryption.decrypt(user.password);
+        let errors = [];
 
-    //Check required fields
-    if (!oldPassword || !newPassword || !confirmPassword) {
-        errors.push({ msg: "Please fill in all fields" });
-    }
-
-    //Check password new equals to old
-    if (newPassword == oldPassword) {
-        errors.push({ msg: "Your new password is your old password" });
-    }
-
-    //Check passwords match
-    if (newPassword !== confirmPassword) {
-        errors.push({ msg: "Your passwords do not match. please try again" });
-    }
-
-    if (oldPassword != currentUserPassword) {
-        errors.push({ msg: "Your old password not match your current password" });
-    }
-
-    //Check passwords length
-    if (newPassword.length < 6) {
-        errors.push({ msg: "Passwords Should be at least 6 characters" });
-    }
-
-    if (errors.length > 0) {
-        res.status(400).json({
-            status: "fail",
-            message: errors,
-        });
-    } else {
-        // New Paswword
-        const EncryptedPassword = encryption.encrypt(newPassword);
-        try {
-            await User.updateOne({ email: user.email }, { password: EncryptedPassword }, { upsert: true });
-            res.status(200).json({
-                status: "success",
-                data: "The password was changed!",
-            });
-        } catch (e) {
-            return res.status(404).send("Bad");
+        //Check required fields
+        if (!oldPassword || !newPassword || !confirmPassword) {
+            errors.push({ msg: "Please fill in all fields" });
         }
+
+        //Check password new equals to old
+        if (newPassword == oldPassword) {
+            errors.push({ msg: "Your new password is your old password" });
+        }
+
+        //Check passwords match
+        if (newPassword !== confirmPassword) {
+            errors.push({ msg: "Your passwords do not match. please try again" });
+        }
+
+        if (oldPassword != currentUserPassword) {
+            errors.push({ msg: "Your old password not match your current password" });
+        }
+
+        //Check passwords length
+        if (newPassword.length < 6) {
+            errors.push({ msg: "Passwords Should be at least 6 characters" });
+        }
+
+        if (errors.length > 0) {
+            res.status(400).json({
+                status: "fail",
+                message: errors,
+            });
+        } else {
+            // New Paswword
+            const EncryptedPassword = encryption.encrypt(newPassword);
+            try {
+                await User.updateOne({ email: user.email }, { password: EncryptedPassword }, { upsert: true });
+                res.status(200).json({
+                    status: "success",
+                    data: "The password was changed!",
+                });
+            } catch (e) {
+                return res.status(404).send("Bad");
+            }
+        }
+    } catch (e) {
+        return res.status(404).send("Bad");
     }
 });
 

@@ -13,7 +13,9 @@
 
     <!-- Custom fonts for this template -->
     <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/css/sb-admin-2.min.css" rel="stylesheet">
@@ -114,12 +116,15 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span id="userName" class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
-                                <img class="img-profile rounded-circle" src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle"
+                                    src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="/profile">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
                                 </a>
@@ -128,7 +133,8 @@
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> About
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" id="clickLogout" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" id="clickLogout" href="#" data-toggle="modal"
+                                    data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
                                 </a>
                             </div>
@@ -149,25 +155,29 @@
                     <div class="row">
                         <div class="col-lg-3 mb-3">
                             <span>First name</span>
-                            <br><input class="form-control form-control-user" type="text" id="firstName" placeholder="----">
+                            <br><input class="form-control form-control-user" type="text" id="firstName"
+                                placeholder="----">
                         </div>
 
                         <div class="col-lg-3 mb-3">
                             <span>Last name</span>
-                            <br><input class="form-control form-control-user" type="text" id="lastName" placeholder="----">
+                            <br><input class="form-control form-control-user" type="text" id="lastName"
+                                placeholder="----">
 
 
                         </div>
                         <div class="col-lg-3 mb-3">
 
                             <span>Phone number</span>
-                            <br><input class="form-control form-control-user" type="text" id="phoneNum" placeholder="----">
+                            <br><input class="form-control form-control-user" type="text" id="phoneNum"
+                                placeholder="----">
 
                         </div>
                         <div class="col-lg-3 mb-3">
 
                             <span>Country</span>
-                            <br><input class="form-control form-control-user" type="text" id="country" placeholder="----">
+                            <br><input class="form-control form-control-user" type="text" id="country"
+                                placeholder="----">
                         </div>
                     </div>
 
@@ -175,7 +185,8 @@
                     <div class="row">
                         <div class="col-lg-3 mb-3">
                             <span>E-mail</span>
-                            <br><input class="form-control form-control-user" type="Email" id="email" title="Enter valid email with @, phone, or username" placeholder="----">
+                            <br><input class="form-control form-control-user" type="Email" id="email"
+                                title="Enter valid email with @, phone, or username" placeholder="----">
                         </div>
 
                         <div class="col-lg-3 mb-3">
@@ -187,13 +198,15 @@
                         <div class="col-lg-3 mb-3">
 
                             <span>Street</span>
-                            <br><input class="form-control form-control-user" type="text" id="street" placeholder="----">
+                            <br><input class="form-control form-control-user" type="text" id="street"
+                                placeholder="----">
 
                         </div>
                         <div class="col-lg-3 mb-3">
 
                             <span>Zip code</span>
-                            <br><input class="form-control form-control-user" type="text" id="zipCode" placeholder="----">
+                            <br><input class="form-control form-control-user" type="text" id="zipCode"
+                                placeholder="----">
                         </div>
 
 
@@ -217,19 +230,28 @@
 
                             <div class="form-group row">
                                 <div class="col mb-3 mb-sm-0">
-                                    <input type="password" id="oldPassword" name="oldPassword" class="form-control form-control-user" placeholder="Old password" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 33 || event.charCode == 64 || (event.charCode >= 35 && event.charCode <= 38) || event.charCode == 94 || event.charCode == 42 || event.charCode == 40 || event.charCode == 41 )"
-                                        maxlength="16" value="<%= typeof oldPassword != 'undefined' ? oldPassword : '' %>" />
+                                    <input type="password" id="oldPassword" name="oldPassword"
+                                        class="form-control form-control-user" placeholder="Old password"
+                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 33 || event.charCode == 64 || (event.charCode >= 35 && event.charCode <= 38) || event.charCode == 94 || event.charCode == 42 || event.charCode == 40 || event.charCode == 41 )"
+                                        maxlength="16"
+                                        value="<%= typeof oldPassword != 'undefined' ? oldPassword : '' %>" />
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" id="newPassword" name="newPassword" class="form-control form-control-user" placeholder="New password" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 33 || event.charCode == 64 || (event.charCode >= 35 && event.charCode <= 38) || event.charCode == 94 || event.charCode == 42 || event.charCode == 40 || event.charCode == 41 )"
-                                        maxlength="16" value="<%= typeof newPassword != 'undefined' ? newPassword : '' %>" />
+                                    <input type="password" id="newPassword" name="newPassword"
+                                        class="form-control form-control-user" placeholder="New password"
+                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 33 || event.charCode == 64 || (event.charCode >= 35 && event.charCode <= 38) || event.charCode == 94 || event.charCode == 42 || event.charCode == 40 || event.charCode == 41 )"
+                                        maxlength="16"
+                                        value="<%= typeof newPassword != 'undefined' ? newPassword : '' %>" />
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control form-control-user" placeholder="Confirm Password" onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 33 || event.charCode == 64 || (event.charCode >= 35 && event.charCode <= 38) || event.charCode == 94 || event.charCode == 42 || event.charCode == 40 || event.charCode == 41 )"
-                                        maxlength="16" value="<%= typeof confirmPassword != 'undefined' ? confirmPassword : '' %>" />
+                                    <input type="password" id="confirmPassword" name="confirmPassword"
+                                        class="form-control form-control-user" placeholder="Confirm Password"
+                                        onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode >= 48 && event.charCode <= 57) || (event.charCode == 33 || event.charCode == 64 || (event.charCode >= 35 && event.charCode <= 38) || event.charCode == 94 || event.charCode == 42 || event.charCode == 40 || event.charCode == 41 )"
+                                        maxlength="16"
+                                        value="<%= typeof confirmPassword != 'undefined' ? confirmPassword : '' %>" />
                                 </div>
                             </div>
 
@@ -278,7 +300,8 @@
         </a>
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -297,7 +320,8 @@
         </div>
 
         <!-- ChangeDetailesModal-->
-        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -309,7 +333,8 @@
 
                     <div class="modal-body" id="modal1"></div>
                     <div class="modal-footer">
-                        <button id="dismissBtn" class="btn btn-secondary" type="button" data-dismiss="modal">Dismiss</button>
+                        <button id="dismissBtn" class="btn btn-secondary" type="button"
+                            data-dismiss="modal">Dismiss</button>
 
                     </div>
                 </div>
@@ -327,7 +352,7 @@
         <script src="/static/js/sb-admin-2.min.js"></script>
 
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 let user = {};
                 const _idSession = window.sessionStorage.getItem('_id');
                 const _idLocal = window.localStorage.getItem('_id');
@@ -343,29 +368,47 @@
                     window.location.href = url;
                 } else {
                     $('#userName').text(firstName);
-                    $.post('/users/getProfile', {
-                        id: _idLocal
-                    }).done(function(data) {
-                        user = data;
-                        $('#nameOfUser').text(user.firstName);
-                        $('#firstName').val(user.firstName);
-                        $('#lastName').val(user.lastName)
-                        $('#email').val(user.email);
-                        if (user.phone != null)
-                            $('#phoneNum').val(user.phone);
-                        if (user.country != null)
-                            $('#country').val(user.country);
-                        if (user.city != null)
-                            $('#city').val(user.city);
-                        if (user.street != null)
-                            $('#street').val(user.street);
-                        if (user.zipCode != null)
-                            $('#zipCode').val(user.zipCode);
-                    })
+
+
+                    $.ajax({
+                        url: '/users/getProfile',
+                        type: 'post',
+                        data: {
+                            id: _idLocal
+                        },
+                        success: function (response) {
+                            user = response;
+                            $('#nameOfUser').text(user.firstName);
+                            $('#firstName').val(user.firstName);
+                            $('#lastName').val(user.lastName)
+                            $('#email').val(user.email);
+                            if (user.phone != null)
+                                $('#phoneNum').val(user.phone);
+                            if (user.country != null)
+                                $('#country').val(user.country);
+                            if (user.city != null)
+                                $('#city').val(user.city);
+                            if (user.street != null)
+                                $('#street').val(user.street);
+                            if (user.zipCode != null)
+                                $('#zipCode').val(user.zipCode);
+                        },
+                        error: function (error) {
+                            localStorage.removeItem('_id');
+                            sessionStorage.removeItem('_id');
+                            localStorage.removeItem('firstName');
+                            localStorage.removeItem('email');
+                            localStorage.removeItem('rememberOn');
+                            url = '/404'
+                            window.location.href = url;
+                        }
+                    });
+
+
 
                 }
 
-                $("#clickLogout").click(function() {
+                $("#clickLogout").click(function () {
                     localStorage.removeItem('_id');
                     sessionStorage.removeItem('_id');
                     localStorage.removeItem('firstName');
@@ -377,13 +420,28 @@
 
 
 
-                $("#updateBtn").click(async function() {
-                    await $.post('/users/getProfile', {
-                        id: _idLocal
-                    }).done(function(data) {
-                        user = data;
+                $("#updateBtn").click(async function () {
 
-                    })
+                    await $.ajax({
+                        url: '/users/getProfile',
+                        type: 'post',
+                        data: {
+                            id: _idLocal
+                        },
+                        success: function (response) {
+                            user = response;
+                        },
+                        error: function (error) {
+                            localStorage.removeItem('_id');
+                            sessionStorage.removeItem('_id');
+                            localStorage.removeItem('firstName');
+                            localStorage.removeItem('email');
+                            localStorage.removeItem('rememberOn');
+                            url = '/404'
+                            window.location.href = url;
+                        }
+                    });
+
 
                     const newProfileInfo = {
                         firstName: $('#firstName').val(),
@@ -412,63 +470,97 @@
                     ) {
                         $('#successModal').modal('show');
                         $('#modal1').text('you forbided to erase field that is already in the system, sorry');
-                        $('#dismissBtn').click(function() {
+                        $('#dismissBtn').click(function () {
                             window.location.href = window.location.href;
                         })
                     } else {
 
-                        $.post('/users/updateProfile', {
-                            firstName: newProfileInfo.firstName,
-                            lastName: newProfileInfo.lastName,
-                            email: newProfileInfo.email,
-                            phone: newProfileInfo.phone,
-                            country: newProfileInfo.country,
-                            city: newProfileInfo.city,
-                            street: newProfileInfo.street,
-                            zipCode: newProfileInfo.zipCode,
-                            prevEmail: user.email,
-                            id: user._id
-                        }).done(function(data) {
-                            $('#successModal').modal('show');
-                            $('#modal1').text(data);
-                        })
+                        $.ajax({
+                            url: '/users/updateProfile',
+                            type: 'post',
+                            data: {
+                                firstName: newProfileInfo.firstName,
+                                lastName: newProfileInfo.lastName,
+                                email: newProfileInfo.email,
+                                phone: newProfileInfo.phone,
+                                country: newProfileInfo.country,
+                                city: newProfileInfo.city,
+                                street: newProfileInfo.street,
+                                zipCode: newProfileInfo.zipCode,
+                                prevEmail: user.email,
+                                id: user._id
+                            },
+                            success: function (response) {
+                                $('#successModal').modal('show');
+                                $('#modal1').text(response);
+                            },
+                            error: function (error) {
+                                localStorage.removeItem('_id');
+                                sessionStorage.removeItem('_id');
+                                localStorage.removeItem('firstName');
+                                localStorage.removeItem('email');
+                                localStorage.removeItem('rememberOn');
+                                url = '/404'
+                                window.location.href = url;
+                            }
+                        });
+
                     }
 
 
                 })
 
-                $("#changePassword").click(function() {
+                $("#changePassword").click(function () {
                     $("#dialogBox").empty();
-                    $.post('/users/changePassword', {
-                        oldPassword: $('#oldPassword').val(),
-                        newPassword: $('#newPassword').val(),
-                        confirmPassword: $('#confirmPassword').val(),
-                        id: _idLocal
-                    }).then(function(respone) {
-                        const sucessDiv = document.createElement('div');
-                        sucessDiv.classList.add('alert');
-                        sucessDiv.classList.add('alert-info');
-                        sucessDiv.classList.add('alert-dismissible');
-                        sucessDiv.classList.add('fade');
-                        sucessDiv.classList.add('show');
-                        sucessDiv.role = 'alert'
-                        sucessDiv.innerText = respone.data;
-                        $("#dialogBox").append(sucessDiv);
 
-                    }, function(error) {
-                        const message = (JSON.parse(error.responseText)).message;
+                    $.ajax({
+                        type: 'POST',
+                        url: '/users/changePassword',
+                        data: {
+                            oldPassword: $('#oldPassword').val(),
+                            newPassword: $('#newPassword').val(),
+                            confirmPassword: $('#confirmPassword').val(),
+                            id: _idLocal
+                        },
+                        success: function (respone) {
+                            const sucessDiv = document.createElement('div');
+                            sucessDiv.classList.add('alert');
+                            sucessDiv.classList.add('alert-info');
+                            sucessDiv.classList.add('alert-dismissible');
+                            sucessDiv.classList.add('fade');
+                            sucessDiv.classList.add('show');
+                            sucessDiv.role = 'alert'
+                            sucessDiv.innerText = respone.data;
+                            $("#dialogBox").append(sucessDiv);
+                        },
+                        statusCode: {
+                            404: function (error) {
+                                localStorage.removeItem('_id');
+                                sessionStorage.removeItem('_id');
+                                localStorage.removeItem('firstName');
+                                localStorage.removeItem('email');
+                                localStorage.removeItem('rememberOn');
+                                url = '/404'
+                                window.location.href = url;
+                            },
 
-                        message.forEach(error => {
-                            const errorDiv = document.createElement('div');
-                            errorDiv.classList.add('alert');
-                            errorDiv.classList.add('alert-warning');
-                            errorDiv.classList.add('alert-dismissible');
-                            errorDiv.classList.add('fade');
-                            errorDiv.classList.add('show');
-                            errorDiv.role = 'alert'
-                            errorDiv.innerText = error.msg;
-                            $("#dialogBox").append(errorDiv);
-                        })
+                            400: function (error) {
+                                const message = (JSON.parse(error.responseText)).message;
+
+                                message.forEach(error => {
+                                    const errorDiv = document.createElement('div');
+                                    errorDiv.classList.add('alert');
+                                    errorDiv.classList.add('alert-warning');
+                                    errorDiv.classList.add('alert-dismissible');
+                                    errorDiv.classList.add('fade');
+                                    errorDiv.classList.add('show');
+                                    errorDiv.role = 'alert'
+                                    errorDiv.innerText = error.msg;
+                                    $("#dialogBox").append(errorDiv);
+                                })
+                            }
+                        }
+
                     });
                 })
             })
